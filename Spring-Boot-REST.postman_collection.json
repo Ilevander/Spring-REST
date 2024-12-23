@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "714e8903-11ed-4dfd-a49b-dd45815afe5e",
+		"name": "Spring-Boot-REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29700066"
+	},
+	"item": [
+		{
+			"name": "Get All Articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Article By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/id/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Article By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}?id=3",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new Article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 7,\r\n    \"description\": \"Laptop Dell Latittude\",\r\n    \"price\": 10000,\r\n    \"quantity\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Article By search by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 77,\r\n    \"description\": \"Laptop Dell Latittude Updated\",\r\n    \"price\": 15000,\r\n    \"quantity\": 11\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/update/7"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Article",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{base_url}}/delete/2"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:7777/api/articles",
+			"type": "string"
+		}
+	]
+}
