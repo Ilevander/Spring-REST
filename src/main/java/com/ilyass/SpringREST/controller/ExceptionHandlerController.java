@@ -44,3 +44,10 @@ public class ExceptionHandlerController extends ResponseEntityExceptionHandler {
         return new ResponseEntity(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
+
+/**
+ *     • L’annotation @ControllerAdvice permet à Spring de créer un contrôleur qui va intercepter les exceptions levées par l’application. Le type d’exception à traiter est précisé en paramètre de l’annotation @ExceptionHandler.
+ *     • Dans cet exemple, la méthode handleBusinessException(..) traite les exceptions de type BusinessException et la méthode handleOtherExceptions(..) traite les autres exceptions.
+ *     • Remarquez que nous avons hérité de la classe ResponseEntityExceptionHandler et ceci afin de redéfinir la méthode handleMethodArgumentNotValid. Cette dernière permet de traiter les exceptions levées par l’api Bean Validation.
+ *     • Avec l’annotation @ControllerAdvice, Spring implémente le Design Pattern AOP. Il permet de séparer le traitement technique relatif à la gestion des exceptions du code métier de l’application.
+ */

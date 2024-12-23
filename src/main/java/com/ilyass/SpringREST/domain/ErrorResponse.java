@@ -17,3 +17,7 @@ public class ErrorResponse {
         this.details = details;
     }
 }
+
+/**
+ * Cette classe permet de personnaliser les messages d’erreurs que nous allons transmettre comme réponse au client au cas où une exception a été levée ou bien au cas où une règle de gestion n’a pas été respectée.
+ */

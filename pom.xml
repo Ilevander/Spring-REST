@@ -32,11 +32,20 @@
 		<maven.compiler.target>21</maven.compiler.target>
 		-->
 	</properties>
+
 	<dependencies>
+		<!--
+		◦ Contient Tomcat comme conteneur web embarqué, Spring MVC et Spring Rest.
+        ◦ Spring propose également Undertow et Jettey comme conteneurs web embarqués.
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<!--
+		 Pour le démarrage automatique de Tomcat une fois le code source du projet a été    modifié.
+		-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -44,18 +53,29 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.30</version>
 			<optional>true</optional>
 		</dependency>
+
+		<!--
+		Le Starter fourni par Spring Boot pour réaliser les tests unitaires et les tests d’intégrations.
+		Ce starter utilise les Framework suivants : JUNIT, MOCKITO, HAMCREST, …
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 
+		<!--
+		Pour la validation des données du DTO (Data Transfert Object). Par défaut, Spring utilise comme implémentation de l’API Bean Validation, le Framework Hibernate Validator.
+		L’api propose plusieurs annotations comme par exemple : @NotNull, @NotEmpty, @Max, ….
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
@@ -81,6 +101,7 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
+			<!--Ce plugin permet la compilation du projet et le build (la création de l’exécutable final : le JAR ou bien le WAR).-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

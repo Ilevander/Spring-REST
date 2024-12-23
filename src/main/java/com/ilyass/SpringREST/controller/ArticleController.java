@@ -68,3 +68,9 @@ public class ArticleController {
         return new ResponseEntity<>("Article is deleted successfully", HttpStatus.OK);
     }
 }
+
+/**
+ *     • L’annotation @Valid est fournie par le starter spring-boot-starter-validation qui utilise Hibernate Validator comme implémentation de l’api Bean Validation.
+ *
+ *     • @Valid permet à Spring de vérifier si les données envoyées dans le DTO respectent les règles de gestion configurées moyennant les annotations @NotNul, @Size, …
+ */

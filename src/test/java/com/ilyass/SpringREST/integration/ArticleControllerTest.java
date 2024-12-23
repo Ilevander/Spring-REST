@@ -42,3 +42,8 @@ public class ArticleControllerTest {
     }
 
 }
+
+/**
+ *     • les variables d’instance de la classe par @Autowired au lieu de @MockBean. En effet, l’objectif est d’effectuer les test d’intégration de bout en bout.
+ *     • La classe TestRestTemplate offre la méthode exchange(..) pour testrer les méthodes Rest exposées par notre service web.
+ */

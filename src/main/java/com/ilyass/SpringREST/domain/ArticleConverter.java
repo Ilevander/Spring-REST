@@ -27,3 +27,8 @@ public class ArticleConverter {
         return dtoList;
     }
 }
+
+/**
+ *     • Cette classe permet d’implémenter le pont DTO<-> BO (Business Object).
+ *     • Si vous modifiez le BO, vous allez modifier uniquement les méthodes de cette classe, les méthodes de la classe DTO resteront les mêmes.
+ */

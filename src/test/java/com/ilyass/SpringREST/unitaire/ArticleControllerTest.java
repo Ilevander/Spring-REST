@@ -47,3 +47,16 @@ public class ArticleControllerTest {
                 .andExpect(jsonPath("$[3].quantity").value(10d));
     }
 }
+
+/**
+ *     • L’annotation @SpringBootTest permet de créer le contexte de votre application pour pouvoir effectuer les tests unitaires et les tests d’intégration.
+ *     Cette dernière permet d’activer des fonctionnalités supplémentaires telles que des propriétés d'environnement personnalisées, différents modes d'environnement Web, des ports aléatoires, des Bean TestRestTemplate et WebTestClient.
+ *     • L’annotation @AutoConfigureMockMvc permet de configurer l’objet MockMvc.
+ *     • L’attribut mockMvc est un élément important. Il permet d’appeler la méthode “perform” qui déclenche la requête.
+ *     • L’attribut service est annoté @MockBean. Il s’agit d’un objet mock (un objet fictif). Le Framework Mockito offre certains services très pratiques dans les tests unitaires.
+ *     Par exemple, Mockito permet de simuler le résultat de retour d’une méthode.
+ *     Il est obligatoire, car la méthode du controller exécutée par l’appel de ("/api/articles/”) utilise cette classe.
+ *     • La méthode perform prend en paramètre l’instruction get("/api/articles/all"). On exécute donc une requête GET sur l’URL "/api/articles/all".
+ *     • Ensuite, l’instruction .andExpect(status().isOk()) indique que nous attendons une réponse HTTP 200. 
+ *     • Remarquer que la variable service est annotée par @MockBean.
+ */
